@@ -1,8 +1,7 @@
 import { useEffect, useRef } from 'react'
 import type { MouseEvent } from 'react'
-import Media from './Media'
 import { scrollToHash } from '../lib/scroll'
-import { media } from '../data/media'
+import { heroPhotos } from '../data/media'
 import { site } from '../data/site'
 
 function Hero() {
@@ -58,7 +57,18 @@ function Hero() {
 
         <div className="hero-media" ref={parallaxRef}>
           <div className="hero-media-inner rise-media">
-            <Media slot={media.hero} />
+            <div className="hero-collage">
+              {heroPhotos.map((src, index) => (
+                <img
+                  key={src}
+                  className="hero-collage-item"
+                  src={`${import.meta.env.BASE_URL}${src}`}
+                  alt="Результат процедуры YARKO HAIR BEAUTY"
+                  loading={index === 0 ? 'eager' : 'lazy'}
+                  decoding="async"
+                />
+              ))}
+            </div>
             <span className="hero-media-tag">yarko keratin</span>
           </div>
         </div>

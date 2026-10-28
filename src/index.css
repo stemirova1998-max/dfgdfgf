@@ -520,6 +520,19 @@ a {
   box-shadow: 0 40px 90px rgba(0, 0, 0, 0.5);
 }
 
+.hero-collage {
+  display: grid;
+  gap: 12px;
+}
+
+.hero-collage-item {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+}
+
 .hero-media-tag {
   position: absolute;
   left: 18px;

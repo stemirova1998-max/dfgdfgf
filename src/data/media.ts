@@ -102,3 +102,10 @@ export const media = {
   before: MediaSlot
   after: MediaSlot
 }
+
+/** Фотографии в hero-блоке: три ряда. Пути — относительно public/. */
+export const heroPhotos = [
+  'images/d37419e4-1fb5-4579-9c34-2249dda5f4f1.jpg',
+  'images/7a85be06-419e-4867-81aa-2e9f1a7705aa.jpg',
+  'images/cbd33a17-5f52-4981-bef2-9b9bd5ddd3f8.jpg',
+] as const
