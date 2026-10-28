@@ -1,14 +1,14 @@
 :root {
-  --choco: #211915;
-  --choco-2: #2e241f;
-  --cream: #f5ede5;
-  --beige: #e8d5c5;
-  --beige-deep: #efdfd0;
-  --rose: #c69a89;
-  --rose-deep: #a97f6e;
-  --rose-soft: rgba(198, 154, 137, 0.2);
-  --muted: #7a6b63;
-  --line: rgba(33, 25, 21, 0.12);
+  --choco: #0b0a0c;
+  --choco-2: #161318;
+  --cream: #f7eff4;
+  --beige: #f3a8c4;
+  --beige-deep: #221622;
+  --rose: #f3a8c4;
+  --rose-deep: #e983ab;
+  --rose-soft: rgba(243, 168, 196, 0.16);
+  --muted: #b7a7b0;
+  --line: rgba(247, 239, 244, 0.14);
   --font-display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
   --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
 }
@@ -25,8 +25,11 @@ html {
 
 body {
   font-family: var(--font-sans);
-  background: var(--cream);
-  color: var(--choco);
+  background:
+    radial-gradient(55% 45% at 12% 0%, rgba(243, 168, 196, 0.16), transparent 60%),
+    radial-gradient(45% 40% at 88% 12%, rgba(233, 131, 171, 0.12), transparent 60%),
+    var(--choco);
+  color: var(--cream);
   line-height: 1.6;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
@@ -53,7 +56,7 @@ a {
 
 ::selection {
   background: var(--rose);
-  color: #fff;
+  color: var(--choco);
 }
 
 :focus-visible {
@@ -190,31 +193,31 @@ a {
 }
 
 .btn-primary {
-  background: var(--choco);
-  color: var(--cream);
+  background: linear-gradient(135deg, var(--rose), var(--rose-deep));
+  color: var(--choco);
 }
 
 .btn-primary:hover {
-  background: var(--choco-2);
+  background: linear-gradient(135deg, var(--rose-deep), var(--rose));
   transform: translateY(-3px);
-  box-shadow: 0 18px 38px rgba(33, 25, 21, 0.28);
+  box-shadow: 0 18px 38px rgba(233, 131, 171, 0.28);
 }
 
 .btn-ghost {
   background: transparent;
-  color: var(--choco);
-  border-color: rgba(33, 25, 21, 0.35);
+  color: var(--cream);
+  border-color: rgba(247, 239, 244, 0.4);
 }
 
 .btn-ghost:hover {
-  background: var(--choco);
-  color: var(--cream);
-  border-color: var(--choco);
+  background: var(--rose);
+  color: var(--choco);
+  border-color: var(--rose);
   transform: translateY(-3px);
 }
 
 .btn-light {
-  background: var(--cream);
+  background: var(--rose);
   color: var(--choco);
 }
 
@@ -245,9 +248,10 @@ a {
 }
 
 .topbar {
-  background: var(--choco);
-  color: rgba(245, 237, 229, 0.82);
+  background: #060507;
+  color: rgba(247, 239, 244, 0.82);
   font-size: 0.78rem;
+  border-bottom: 1px solid rgba(247, 239, 244, 0.08);
 }
 
 .topbar-inner {
@@ -293,11 +297,11 @@ a {
 }
 
 .header.scrolled .header-main {
-  background: rgba(245, 237, 229, 0.88);
+  background: rgba(11, 10, 12, 0.82);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-bottom-color: var(--line);
-  box-shadow: 0 10px 30px rgba(33, 25, 21, 0.06);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
 
 .header-inner {
@@ -318,7 +322,7 @@ a {
 .logo-mark {
   width: 40px;
   height: 40px;
-  color: var(--choco);
+  color: var(--cream);
   flex: none;
 }
 
@@ -358,7 +362,7 @@ a {
   font-weight: 500;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--choco);
+  color: var(--cream);
   text-decoration: none;
   padding: 4px 0;
 }
@@ -404,7 +408,7 @@ a {
   display: block;
   width: 24px;
   height: 2px;
-  background: var(--choco);
+  background: var(--cream);
   border-radius: 2px;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
@@ -454,9 +458,9 @@ a {
   padding: 156px 0 64px;
   overflow: hidden;
   background:
-    radial-gradient(55% 60% at 82% 12%, rgba(198, 154, 137, 0.22), transparent 65%),
-    radial-gradient(45% 50% at 8% 88%, rgba(232, 213, 197, 0.7), transparent 70%),
-    var(--cream);
+    radial-gradient(55% 60% at 82% 12%, rgba(243, 168, 196, 0.2), transparent 65%),
+    radial-gradient(45% 50% at 8% 88%, rgba(233, 131, 171, 0.12), transparent 70%),
+    var(--choco);
 }
 
 .hero::before {
@@ -513,7 +517,7 @@ a {
 
 .hero-media .media {
   border-radius: 10px;
-  box-shadow: 0 40px 90px rgba(33, 25, 21, 0.22);
+  box-shadow: 0 40px 90px rgba(0, 0, 0, 0.5);
 }
 
 .hero-media-tag {
@@ -521,20 +525,20 @@ a {
   left: 18px;
   bottom: 18px;
   padding: 9px 16px;
-  background: rgba(245, 237, 229, 0.92);
+  background: rgba(11, 10, 12, 0.72);
   border-radius: 999px;
   font-size: 0.66rem;
   font-weight: 600;
   letter-spacing: 0.24em;
   text-transform: uppercase;
-  color: var(--choco);
+  color: var(--rose);
 }
 
 /* ---------- MEDIA / PLACEHOLDER ---------- */
 .media {
   position: relative;
   overflow: hidden;
-  background: var(--beige);
+  background: var(--beige-deep);
 }
 
 .media img {
@@ -550,15 +554,15 @@ a {
   align-items: center;
   justify-content: center;
   background:
-    radial-gradient(120% 90% at 18% 8%, rgba(198, 154, 137, 0.3), transparent 55%),
-    linear-gradient(135deg, var(--beige), #ddc6b4);
+    radial-gradient(120% 90% at 18% 8%, rgba(243, 168, 196, 0.26), transparent 55%),
+    linear-gradient(135deg, var(--beige-deep), #3a2432);
 }
 
 .media-ph::after {
   content: '';
   position: absolute;
   inset: 14px;
-  border: 1px solid rgba(33, 25, 21, 0.14);
+  border: 1px solid rgba(247, 239, 244, 0.14);
   pointer-events: none;
 }
 
@@ -567,7 +571,7 @@ a {
   flex-direction: column;
   align-items: center;
   gap: 12px;
-  color: rgba(33, 25, 21, 0.55);
+  color: rgba(247, 239, 244, 0.55);
 }
 
 .media-ph-inner svg {
@@ -586,7 +590,7 @@ a {
 
 /* ---------- ABOUT ---------- */
 .about {
-  background: #fff;
+  background: transparent;
 }
 
 .about-grid {
@@ -602,7 +606,7 @@ a {
 
 .about-media-wrap .media {
   border-radius: 10px;
-  box-shadow: 0 36px 80px rgba(33, 25, 21, 0.18);
+  box-shadow: 0 36px 80px rgba(0, 0, 0, 0.45);
 }
 
 .about-media-caption {
@@ -610,13 +614,13 @@ a {
   left: 18px;
   bottom: 18px;
   padding: 9px 16px;
-  background: rgba(245, 237, 229, 0.92);
+  background: rgba(11, 10, 12, 0.72);
   border-radius: 999px;
   font-size: 0.66rem;
   font-weight: 600;
   letter-spacing: 0.24em;
   text-transform: uppercase;
-  color: var(--choco);
+  color: var(--rose);
 }
 
 /* ---------- ADVANTAGES ---------- */
@@ -631,7 +635,7 @@ a {
 }
 
 .advantage-card {
-  background: #fff;
+  background: var(--choco-2);
   border: 1px solid var(--line);
   border-radius: 14px;
   padding: 28px 24px;
@@ -660,7 +664,7 @@ a {
 
 /* ---------- SERVICES ---------- */
 .services {
-  background: var(--cream);
+  background: transparent;
 }
 
 .services-grid {
@@ -670,7 +674,7 @@ a {
 }
 
 .service-card {
-  background: #fff;
+  background: var(--choco-2);
   border: 1px solid var(--line);
   border-radius: 14px;
   overflow: hidden;
@@ -679,7 +683,7 @@ a {
 
 .service-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 18px 40px rgba(33, 25, 21, 0.1);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4);
 }
 
 .service-media .media {
@@ -753,7 +757,7 @@ a {
   aspect-ratio: 16 / 9;
   overflow: hidden;
   border-radius: 12px;
-  box-shadow: 0 32px 72px rgba(33, 25, 21, 0.2);
+  box-shadow: 0 32px 72px rgba(0, 0, 0, 0.5);
   user-select: none;
 }
 
@@ -781,8 +785,8 @@ a {
   position: absolute;
   top: 16px;
   padding: 8px 14px;
-  background: rgba(33, 25, 21, 0.55);
-  color: var(--cream);
+  background: rgba(233, 131, 171, 0.55);
+  color: var(--choco);
   border-radius: 999px;
   font-size: 0.66rem;
   font-weight: 600;
@@ -861,7 +865,7 @@ a {
 
 /* ---------- REVIEWS ---------- */
 .reviews {
-  background: var(--cream);
+  background: transparent;
 }
 
 .reviews-grid {
@@ -871,7 +875,7 @@ a {
 }
 
 .review-card {
-  background: #fff;
+  background: var(--choco-2);
   border: 1px solid var(--line);
   border-radius: 14px;
   padding: 28px;
@@ -888,7 +892,7 @@ a {
 }
 
 .review-text {
-  color: var(--choco);
+  color: var(--cream);
   font-size: 0.95rem;
   line-height: 1.6;
 }
@@ -904,7 +908,8 @@ a {
 /* ---------- BOOKING ---------- */
 .booking {
   background:
-    radial-gradient(60% 80% at 50% 0%, rgba(198, 154, 137, 0.14), transparent 70%),
+    radial-gradient(60% 80% at 50% 0%, rgba(233, 131, 171, 0.2), transparent 70%),
+    radial-gradient(50% 60% at 50% 100%, rgba(243, 168, 196, 0.12), transparent 70%),
     var(--choco);
   color: var(--cream);
   text-align: center;
@@ -977,9 +982,10 @@ a {
 
 /* ---------- FOOTER ---------- */
 .footer {
-  background: var(--choco);
+  background: #080709;
   color: var(--cream);
   padding: 56px 0 28px;
+  border-top: 1px solid rgba(247, 239, 244, 0.08);
 }
 
 .footer-inner {
