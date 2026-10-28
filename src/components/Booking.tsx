@@ -16,14 +16,24 @@ function Booking() {
           <div className="booking-actions">
             <a
               className="btn btn-light btn-lg"
-              href={site.bookingUrl}
+              href={site.whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
             >
-              Записаться на процедуру
+              Записаться в WhatsApp
+            </a>
+            <a className="btn btn-ghost-light btn-lg" href={site.phoneHref}>
+              {site.phone}
             </a>
           </div>
-          <p className="booking-note">Запись через Instagram · WhatsApp и Telegram — скоро</p>
+          <div className="booking-links">
+            <a href={site.instagramUrl} target="_blank" rel="noopener noreferrer">
+              @{site.instagramHandle}
+            </a>
+          </div>
+          <p className="booking-note">
+            Ежедневно · {site.city} · запись через WhatsApp и Instagram
+          </p>
         </Reveal>
       </div>
     </section>

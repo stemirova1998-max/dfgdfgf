@@ -1,5 +1,7 @@
 import Reveal from './Reveal'
-import { site } from '../data/site'
+import Media from './Media'
+import { media } from '../data/media'
+import { site, serviceMediaKeys } from '../data/site'
 import { scrollToHash } from '../lib/scroll'
 
 function Services() {
@@ -19,21 +21,26 @@ function Services() {
           {site.services.map((service, index) => (
             <Reveal key={service.id} delay={index * 80}>
               <article className="service-card">
-                <span className="service-num">{service.num}</span>
-                <h3 className="service-title">{service.title}</h3>
-                <p className="service-desc">{service.description}</p>
-                <div className="service-foot">
-                  <span className="service-price">{service.price}</span>
-                  <a
-                    className="btn btn-ghost btn-sm"
-                    href="#booking"
-                    onClick={(e) => {
-                      e.preventDefault()
-                      scrollToHash('#booking')
-                    }}
-                  >
-                    Записаться
-                  </a>
+                <div className="service-media">
+                  <Media slot={media[serviceMediaKeys[index]]} />
+                </div>
+                <div className="service-body">
+                  <span className="service-num">{service.num}</span>
+                  <h3 className="service-title">{service.title}</h3>
+                  <p className="service-desc">{service.description}</p>
+                  <div className="service-foot">
+                    <span className="service-price">{service.price}</span>
+                    <a
+                      className="btn btn-ghost btn-sm"
+                      href="#booking"
+                      onClick={(e) => {
+                        e.preventDefault()
+                        scrollToHash('#booking')
+                      }}
+                    >
+                      Записаться
+                    </a>
+                  </div>
                 </div>
               </article>
             </Reveal>

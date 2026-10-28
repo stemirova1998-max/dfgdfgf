@@ -23,7 +23,28 @@ function Header() {
 
   return (
     <header className={`header ${scrolled || menuOpen ? 'scrolled' : ''}`}>
-      <div className="container header-inner">
+      <div className="topbar">
+        <div className="container topbar-inner">
+          <div className="topbar-left">
+            <a className="topbar-phone" href={site.phoneHref}>
+              {site.phone}
+            </a>
+            <span className="topbar-sep">·</span>
+            <span>{site.city}</span>
+          </div>
+          <div className="topbar-right">
+            <a href={site.instagramUrl} target="_blank" rel="noopener noreferrer">
+              Instagram
+            </a>
+            <a href={site.whatsappUrl} target="_blank" rel="noopener noreferrer">
+              WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div className="header-main">
+        <div className="container header-inner">
         <a className="brand" href="#top" onClick={(e) => go(e, '#top')}>
           <Logo />
           <span className="brand-text">
@@ -71,6 +92,7 @@ function Header() {
             Записаться на процедуру
           </a>
         </div>
+      </div>
       </div>
     </header>
   )

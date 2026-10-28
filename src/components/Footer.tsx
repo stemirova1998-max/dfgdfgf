@@ -12,7 +12,7 @@ function Footer() {
   }
 
   return (
-    <footer className="footer">
+    <footer className="footer" id="contacts">
       <div className="container footer-inner">
         <div className="footer-brand">
           <Logo className="logo-invert" />
@@ -28,14 +28,17 @@ function Footer() {
           ))}
         </nav>
 
-        <a
-          className="footer-instagram"
-          href={site.instagramUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          @{site.instagramHandle}
-        </a>
+        <div className="footer-contacts">
+          <p className="footer-contacts-title">Контакты</p>
+          <a href={site.phoneHref}>{site.phone}</a>
+          <a href={site.whatsappUrl} target="_blank" rel="noopener noreferrer">
+            WhatsApp
+          </a>
+          <a href={site.instagramUrl} target="_blank" rel="noopener noreferrer">
+            @{site.instagramHandle}
+          </a>
+          <span>{site.city}</span>
+        </div>
       </div>
       <div className="container footer-bottom">
         © {currentYear} {site.brand}. Все права защищены.
