@@ -20,16 +20,17 @@ function Services() {
         <div className="services-grid">
           {site.services.map((service, index) => (
             <Reveal key={service.id} delay={index * 80}>
-              <article className="service-card">
+              <article className="service-card glow-card">
                 <div className="service-media">
-                  <Media slot={media[serviceMediaKeys[index]]} />
+                  <Media slot={media[serviceMediaKeys[index]]} style={{ aspectRatio: '3 / 4' }} />
+                  <span className="service-num">{service.num}</span>
                 </div>
                 <div className="service-body">
-                  <span className="service-num">{service.num}</span>
                   <h3 className="service-title">{service.title}</h3>
                   <p className="service-desc">{service.description}</p>
                   <div className="service-foot">
                     <span className="service-price">{service.price}</span>
+                    <span className="service-duration">{service.duration}</span>
                     <a
                       className="btn btn-ghost btn-sm"
                       href="#booking"

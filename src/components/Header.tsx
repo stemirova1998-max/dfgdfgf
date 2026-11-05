@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import type { MouseEvent } from 'react'
 import Logo from './Logo'
+import SocialLinks from './SocialLinks'
 import { scrollToHash } from '../lib/scroll'
 import { site } from '../data/site'
 
@@ -33,12 +34,7 @@ function Header() {
             <span>{site.city}</span>
           </div>
           <div className="topbar-right">
-            <a href={site.instagramUrl} target="_blank" rel="noopener noreferrer">
-              Instagram
-            </a>
-            <a href={site.whatsappUrl} target="_blank" rel="noopener noreferrer">
-              WhatsApp
-            </a>
+            <SocialLinks variant="topbar" />
           </div>
         </div>
       </div>

@@ -25,7 +25,7 @@ function Reviews() {
         <div className="reviews-grid">
           {site.reviews.map((review, index) => (
             <Reveal key={review.name} delay={index * 80}>
-              <article className="review-card">
+              <article className="review-card glow-card">
                 <Stars />
                 <p className="review-text">«{review.text}»</p>
                 <span className="review-name">{review.name}</span>

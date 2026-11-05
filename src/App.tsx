@@ -1,5 +1,8 @@
 import Header from './components/Header'
+import CursorGlow from './components/CursorGlow'
+import ScrollGear from './components/ScrollGear'
 import Hero from './components/Hero'
+import Promo from './components/Promo'
 import Advantages from './components/Advantages'
 import Services from './components/Services'
 import Portfolio from './components/Portfolio'
@@ -11,9 +14,12 @@ import Footer from './components/Footer'
 function App() {
   return (
     <>
+      <CursorGlow />
+      <ScrollGear />
       <Header />
       <main>
         <Hero />
+        <Promo />
         <Advantages />
         <Services />
         <Portfolio />

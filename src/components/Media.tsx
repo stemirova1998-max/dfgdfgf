@@ -24,7 +24,12 @@ function Media({ slot, className = '', style }: MediaProps) {
       style={{ aspectRatio: slot.ratio, ...style }}
     >
       {slot.src ? (
-        <img src={slot.src} alt={slot.alt} loading="lazy" decoding="async" />
+        <img
+          src={`${import.meta.env.BASE_URL}${slot.src}`}
+          alt={slot.alt}
+          loading="lazy"
+          decoding="async"
+        />
       ) : (
         <div className="media-ph" role="img" aria-label={`${slot.alt} (заглушка)`}>
           <div className="media-ph-inner">

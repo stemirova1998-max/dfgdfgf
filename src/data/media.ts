@@ -20,13 +20,13 @@ export const media = {
     ratio: '4 / 5',
   },
   about: {
-    src: null,
+    src: 'images/master.jpg',
     alt: 'Мастер YARKO HAIR BEAUTY',
     label: 'Фото: мастер',
     ratio: '4 / 5',
   },
   serviceKeratin: {
-    src: null,
+    src: 'images/db05deb0-dfe7-4f74-99be-7795bfa599c3.jpg',
     alt: 'Кератиновое выпрямление — результат',
     label: 'Фото: кератин',
     ratio: '4 / 3',
@@ -37,10 +37,16 @@ export const media = {
     label: 'Фото: ботокс',
     ratio: '4 / 3',
   },
-  serviceReconstruction: {
+  servicePermanent: {
+    src: 'images/1.jpg',
+    alt: 'Перманентное выпрямление волос — результат',
+    label: 'Фото: перманентное выпрямление',
+    ratio: '4 / 3',
+  },
+  serviceNanoplasty: {
     src: null,
-    alt: 'Реконструкция волос — результат',
-    label: 'Фото: реконструкция',
+    alt: 'Нанопластика волос — результат',
+    label: 'Фото: нанопластика',
     ratio: '4 / 3',
   },
   serviceCold: {
@@ -49,36 +55,38 @@ export const media = {
     label: 'Фото: холодное восстановление',
     ratio: '4 / 3',
   },
-  gallery: [
+  serviceExtensions: {
+    src: null,
+    alt: 'Наращивание волос — результат',
+    label: 'Фото: наращивание',
+    ratio: '4 / 3',
+  },
+  serviceEncapsulation: {
+    src: null,
+    alt: 'Капсуляция волос',
+    label: 'Фото: капсуляция',
+    ratio: '4 / 3',
+  },
+gallery: [
     {
-      src: null,
+      src: 'images/cbd33a17-5f52-4981-bef2-9b9bd5ddd3f8.jpg',
       alt: 'Работа 1 — гладкие волосы',
       label: 'Работа 1',
     },
     {
-      src: null,
+      src: 'images/2.jpg',
       alt: 'Работа 2 — текстура волос',
       label: 'Работа 2',
     },
     {
-      src: null,
+      src: 'images/3.jpg',
       alt: 'Работа 3 — блеск волос',
       label: 'Работа 3',
     },
     {
-      src: null,
+      src: 'images/Без названия (1).png',
       alt: 'Работа 4 — объём и гладкость',
       label: 'Работа 4',
-    },
-    {
-      src: null,
-      alt: 'Работа 5 — восстановление',
-      label: 'Работа 5',
-    },
-    {
-      src: null,
-      alt: 'Работа 6 — результат процедуры',
-      label: 'Работа 6',
     },
   ],
   before: {
@@ -96,8 +104,11 @@ export const media = {
   about: MediaSlot
   serviceKeratin: MediaSlot
   serviceBotox: MediaSlot
-  serviceReconstruction: MediaSlot
+  servicePermanent: MediaSlot
+  serviceNanoplasty: MediaSlot
   serviceCold: MediaSlot
+  serviceExtensions: MediaSlot
+  serviceEncapsulation: MediaSlot
   gallery: MediaSlot[]
   before: MediaSlot
   after: MediaSlot
@@ -105,7 +116,6 @@ export const media = {
 
 /** Фотографии в hero-блоке: три ряда. Пути — относительно public/. */
 export const heroPhotos = [
-  'images/d37419e4-1fb5-4579-9c34-2249dda5f4f1.jpg',
   'images/7a85be06-419e-4867-81aa-2e9f1a7705aa.jpg',
-  'images/cbd33a17-5f52-4981-bef2-9b9bd5ddd3f8.jpg',
+  'images/d37419e4-1fb5-4579-9c34-2249dda5f4f1.jpg',
 ] as const

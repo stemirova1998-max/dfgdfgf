@@ -29,8 +29,9 @@ function HeroCarousel() {
             <img
               src={`${import.meta.env.BASE_URL}${src}`}
               alt="Результат процедуры YARKO HAIR BEAUTY"
-              loading="lazy"
+              loading="eager"
               decoding="async"
+              draggable={false}
             />
           </div>
         ))}

@@ -1,5 +1,6 @@
 import type { MouseEvent } from 'react'
 import Logo from './Logo'
+import SocialLinks from './SocialLinks'
 import { scrollToHash } from '../lib/scroll'
 import { site } from '../data/site'
 
@@ -30,14 +31,12 @@ function Footer() {
 
         <div className="footer-contacts">
           <p className="footer-contacts-title">Контакты</p>
-          <a href={site.phoneHref}>{site.phone}</a>
-          <a href={site.whatsappUrl} target="_blank" rel="noopener noreferrer">
-            WhatsApp
-          </a>
-          <a href={site.instagramUrl} target="_blank" rel="noopener noreferrer">
-            @{site.instagramHandle}
-          </a>
-          <span>{site.city}</span>
+          <a className="footer-phone" href={site.phoneHref}>{site.phone}</a>
+          <SocialLinks variant="footer" />
+          <span className="footer-address">
+            <span className="footer-address-label">Адрес</span>
+            {site.address}
+          </span>
         </div>
       </div>
       <div className="container footer-bottom">

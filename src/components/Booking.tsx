@@ -1,4 +1,5 @@
 import Reveal from './Reveal'
+import SocialLinks from './SocialLinks'
 import { site } from '../data/site'
 
 function Booking() {
@@ -16,23 +17,22 @@ function Booking() {
           <div className="booking-actions">
             <a
               className="btn btn-light btn-lg"
-              href={site.whatsappUrl}
+              href={site.bookingUrl}
               target="_blank"
               rel="noopener noreferrer"
             >
-              Записаться в WhatsApp
+              Записаться в Telegram
             </a>
             <a className="btn btn-ghost-light btn-lg" href={site.phoneHref}>
               {site.phone}
             </a>
           </div>
           <div className="booking-links">
-            <a href={site.instagramUrl} target="_blank" rel="noopener noreferrer">
-              @{site.instagramHandle}
-            </a>
+            <SocialLinks variant="booking" />
           </div>
           <p className="booking-note">
-            Ежедневно · {site.city} · запись через WhatsApp и Instagram
+            <span className="booking-note-label">Адрес</span>
+            {site.address} · запись через Telegram и ВКонтакте
           </p>
         </Reveal>
       </div>
