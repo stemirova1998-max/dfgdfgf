@@ -84,7 +84,7 @@ gallery: [
       label: 'Работа 3',
     },
     {
-      src: 'images/work-4.png',
+      src: 'images/work-4.jpg',
       alt: 'Работа 4 — объём и гладкость',
       label: 'Работа 4',
     },
