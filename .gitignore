@@ -12,6 +12,10 @@ dist
 dist-ssr
 *.local
 
+# Архивы для загрузки на хостинг и служебная папка — не должны попадать в репозиторий
+*.zip
+ЗАГРУЗИТЬ/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
