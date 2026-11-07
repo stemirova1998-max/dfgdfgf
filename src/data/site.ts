@@ -1,4 +1,24 @@
-export const site = {
+export const site: {
+  brand: string
+  brandMark: string
+  brandSub: string
+  city: string
+  address: string
+  phone: string
+  phoneHref: string
+  instagramHandle: string
+  instagramUrl: string
+  telegramUrl: string
+  telegramHandle: string
+  vkUrl: string
+  vkHandle: string
+  bookingUrl: string
+  nav: Array<{ href: string; label: string }>
+  advantages: Array<{ title: string; text: string }>
+  services: Array<{ id: string; num: string; title: string; description: string; price: string; duration: string }>
+  reviews: Array<{ name: string; text: string }>
+  promo: { badge: string; until: string; title: string; subtitle: string; text: string; procedures: string[]; note: string }
+} = {
   brand: 'YARKO HAIR BEAUTY',
   brandMark: 'YARKO',
   brandSub: 'Hair Beauty',
@@ -120,7 +140,49 @@ export const site = {
       text: 'Реконструкция реально спасла мои пересушенные волосы. Результат видно сразу.',
     },
   ],
-} as const
+}
+
+/**
+ * Подменяет данные сайта значениями из админки.
+ * Вызывается ДО первого рендера — клиент сразу видит актуальные данные.
+ */
+export function applySiteData(data: Record<string, unknown> | null) {
+  if (!data || typeof data !== 'object') return
+  const d = data as Record<string, unknown> & { phone: string }
+
+  // Обновляем телефон и ссылку tel:
+  if (d.phone && typeof d.phone === 'string') {
+    const digits = d.phone.replace(/[\s\-\(\)]/g, '')
+    site.phone = d.phone
+    site.phoneHref = 'tel:' + digits
+  }
+
+  // Текстовые поля
+  if (d.city) site.city = d.city as string
+  if (d.address) site.address = d.address as string
+  if (d.bookingUrl) site.bookingUrl = d.bookingUrl as string
+  if (d.instagramHandle) site.instagramHandle = d.instagramHandle as string
+  if (d.instagramUrl) site.instagramUrl = d.instagramUrl as string
+  if (d.telegramUrl) site.telegramUrl = d.telegramUrl as string
+  if (d.vkUrl) site.vkUrl = d.vkUrl as string
+
+  // Массивы
+  if (Array.isArray(d.services)) site.services = d.services as typeof site.services
+  if (Array.isArray(d.reviews)) site.reviews = d.reviews as typeof site.reviews
+  if (Array.isArray(d.advantages)) site.advantages = d.advantages as typeof site.advantages
+
+  // Промо
+  if (d.promo && typeof d.promo === 'object') {
+    const promo = d.promo as Record<string, unknown>
+    if (promo.badge) site.promo.badge = promo.badge as string
+    if (promo.until) site.promo.until = promo.until as string
+    if (promo.title) site.promo.title = promo.title as string
+    if (promo.subtitle) site.promo.subtitle = promo.subtitle as string
+    if (promo.text) site.promo.text = promo.text as string
+    if (Array.isArray(promo.procedures)) site.promo.procedures = promo.procedures as string[]
+    if (promo.note) site.promo.note = promo.note as string
+  }
+}
 
 export const serviceMediaKeys = [
   'serviceKeratin',
