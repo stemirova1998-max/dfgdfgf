@@ -3,8 +3,9 @@ import { defineConfig } from 'vite'
 
 // https://vite.dev/config/
 export default defineConfig({
-  // Репозиторий публикуется на GitHub Pages: https://stemirova1998-max.github.io/dfgdfgf/
-  base: '/dfgdfgf/',
+  // Относительные пути — работает на любом хостинге:
+  // GitHub Pages, кастомный домен, любой другой хостинг
+  base: './',
   plugins: [react()],
   server: {
     host: '127.0.0.1',
